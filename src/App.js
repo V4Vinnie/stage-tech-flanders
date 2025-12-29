@@ -524,47 +524,47 @@ const StageTechFlanders = () => {
             {/* Partner logos - Replace src with actual logo image paths */}
             {/* Flemish Government */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/flemish-government.svg" alt="Flemish Government" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/flemish-government.png"} alt="Flemish Government" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Flemish Government</span>
             </div>
             {/* imec */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/imec.svg" alt="imec" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/imec.png"} alt="imec" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>imec</span>
             </div>
             {/* Ent.a */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/enta.svg" alt="Ent.a" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/enta.png"} alt="Ent.a" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Ent.a</span>
             </div>
             {/* Howest */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/howest.svg" alt="Howest" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/howest.png"} alt="Howest" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Howest</span>
             </div>
             {/* Thomas More */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/thomas-more.svg" alt="Thomas More" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/Thomas_More.png"} alt="Thomas More" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Thomas More</span>
             </div>
             {/* Ritcs */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/ritcs.svg" alt="Ritcs" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/RITCS.png"} alt="Ritcs" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Ritcs</span>
             </div>
             {/* Luca School of Arts */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/luca.svg" alt="Luca School of Arts" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/luca.png"} alt="Luca School of Arts" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Luca School of Arts</span>
             </div>
             {/* PXL */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/pxl.svg" alt="PXL" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/pxl.png"} alt="PXL" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>PXL</span>
             </div>
             {/* AP Hogeschool */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src="/logos/ap-hogeschool.svg" alt="AP Hogeschool" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <img src={process.env.PUBLIC_URL + "/logos/AP.png"} alt="AP Hogeschool" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
               <span className="text-white font-semibold text-sm" style={{display: 'none'}}>AP Hogeschool</span>
             </div>
           </div>
