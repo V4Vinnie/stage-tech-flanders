@@ -4,7 +4,7 @@ const StageTechFlanders = () => {
   const [hoveredGoal, setHoveredGoal] = useState(null);
 
   const Logo = ({ onCircleHover }) => (
-    <svg className="logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <svg className="logo" viewBox="0 0 400 400" xmlns="https://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style={{stopColor: '#FF8A65', stopOpacity: 1}} />
@@ -291,6 +291,43 @@ const StageTechFlanders = () => {
           position: relative;
           z-index: 2;
         }
+        
+        .vision-image-container {
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+        
+        .vision-image-container:hover {
+          transform: scale(1.05);
+        }
+        
+        .vision-image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.6);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        
+        .vision-image-container:hover .vision-image-overlay {
+          opacity: 1;
+        }
+        
+        .vision-image-text {
+          color: white;
+          font-weight: 600;
+          font-size: 1rem;
+          text-align: center;
+          padding: 0.5rem;
+        }
       `}</style>
       
         {/* Header */}
@@ -316,7 +353,7 @@ const StageTechFlanders = () => {
           <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-blue-600/30 z-0"></div>
           <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full -mr-48 -mt-48"></div>
           <div className="header-content w-full flex flex-col items-center justify-center pb-4">
-          <Logo />
+          <Logo onCircleHover={setHoveredGoal} />
             <h1 className="header-title text-white text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg" style={{marginTop: '-5px', marginBottom: '0', color: 'white'}}>
               StageTech Flanders
             </h1>
@@ -396,7 +433,32 @@ const StageTechFlanders = () => {
               By fostering collaboration between research institutions, industry leaders, and creative talent, 
               Stage Tech Flanders wants to enable experimentation and validation of state-of-the-art technology for the entertainment industry.
             </p>
+            
+            {/* Vision Images */}
+            <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', gap: '1rem', marginTop: '2rem'}}>
+              {[
+                { src: process.env.PUBLIC_URL + '/images/immersive-experiences.jpg', label: 'Immersive Experiences' },
+                { src: process.env.PUBLIC_URL + '/images/theatre.jpg', label: 'Theatre' },
+                { src: process.env.PUBLIC_URL + '/images/sports.jpg', label: 'Sports' },
+                { src: process.env.PUBLIC_URL + '/images/music-festivals.jpg', label: 'Music Festivals' },
+                { src: process.env.PUBLIC_URL + '/images/light-festivals.jpg', label: 'Light Festivals' }
+              ].map((image, index) => (
+                <div key={index} className="vision-image-container" style={{flex: '1', minWidth: 0}}>
+                  <img 
+                    src={image.src} 
+                    alt={image.label}
+                    style={{width: '100%', height: '200px', objectFit: 'cover', display: 'block'}}
+                  />
+                  <div className="vision-image-overlay">
+                    <div className="vision-image-text">{image.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* Ruler */}
+          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Goal */}
           <div id="goal" className="scroll-mt-8 mb-10" style={{position: 'relative'}}>
@@ -404,25 +466,70 @@ const StageTechFlanders = () => {
               Goal
             </h2>
             
-            <div style={{display: 'flex', flexDirection: 'row', gap: '2rem', alignItems: 'center'}}>
-              <div className="grid gap-4 mt-6" style={{flex: '1'}}>
-              {goals.map((item, index) => (
-                <div 
-                  key={index} 
-                  className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === index ? 'highlighted' : ''}`}
-                  style={{backgroundColor: '#6366f1'}}
-                >
-                  <p className="text-white font-medium text-sm">
-                    <span className="mr-2">•</span>{item}
-                  </p>
-                </div>
-              ))}
-              </div>
-              <div style={{flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <Logo onCircleHover={setHoveredGoal} />
-              </div>
-            </div>
+            <table style={{width: '100%', display: 'table', tableLayout: 'fixed', borderCollapse: 'collapse', marginTop: '2rem'}}>
+              <colgroup>
+                <col style={{width: '25%'}} />
+                <col style={{width: '25%'}} />
+                <col style={{width: '25%'}} />
+                <col style={{width: '25%'}} />
+              </colgroup>
+              
+              {/* Row 1: First paragraph centered */}
+              <tr style={{display: 'table-row'}}>
+                <td colSpan="4" style={{display: 'table-cell', textAlign: 'center', padding: '0', verticalAlign: 'top'}}>
+                  <div style={{margin: '0 auto', maxWidth: '60%'}}>
+                    <h3 className="text-white text-xl font-bold mb-3 text-center">PROGRAM</h3>
+                    <div 
+                      className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 0 ? 'highlighted' : ''}`}
+                      style={{backgroundColor: '#6366f1'}}
+                    >
+                      <p className="text-white font-medium text-sm">
+                        {goals[0]}
+                      </p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              
+              {/* Row 2: Logo centered */}
+              <tr style={{display: 'table-row'}}>
+                <td colSpan="4" style={{display: 'table-cell', textAlign: 'center', padding: '1rem 0', verticalAlign: 'middle'}}>
+                  <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Logo onCircleHover={setHoveredGoal} />
+                  </div>
+                </td>
+              </tr>
+              
+              {/* Row 3: Two columns - paragraph 2 and 3 */}
+              <tr style={{display: 'table-row'}}>
+                <td colSpan="2" style={{display: 'table-cell', padding: '0 0.75rem 0 0', verticalAlign: 'top'}}>
+                  <h3 className="text-white text-xl font-bold mb-3 text-center">NETWORK</h3>
+                  <div 
+                    className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 1 ? 'highlighted' : ''}`}
+                    style={{backgroundColor: '#6366f1'}}
+                  >
+                    <p className="text-white font-medium text-sm">
+                      {goals[1]}
+                    </p>
+                  </div>
+                </td>
+                <td colSpan="2" style={{display: 'table-cell', padding: '0 0 0 0.75rem', verticalAlign: 'top'}}>
+                  <h3 className="text-white text-xl font-bold mb-3 text-center">HUB</h3>
+                  <div 
+                    className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 2 ? 'highlighted' : ''}`}
+                    style={{backgroundColor: '#6366f1'}}
+                  >
+                    <p className="text-white font-medium text-sm">
+                      {goals[2]}
+                    </p>
+                  </div>
+                </td>
+              </tr>
+            </table>
           </div>
+
+          {/* Ruler */}
+          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Strategic Pillars */}
           <h2 id="pillars" className="text-white text-2xl font-bold mb-6 pb-3 border-b-4 border-white inline-block scroll-mt-8">
@@ -438,6 +545,9 @@ const StageTechFlanders = () => {
             ))}
           </div>
 
+          {/* Ruler */}
+          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+
           {/* Research Roadmaps */}
           <h2 id="roadmaps" className="text-white text-2xl font-bold mb-6 pb-3 border-b-4 border-white inline-block scroll-mt-8">
             Research Roadmaps
@@ -445,7 +555,7 @@ const StageTechFlanders = () => {
           
           <div className="roadmaps-container" style={{position: 'relative', marginTop: '2rem', marginBottom: '4rem', minHeight: '450px'}}>
             <div className="roadmap-arrow" style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
-              <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{width: '100%', height: '100%'}}>
+              <svg viewBox="0 0 1000 450" xmlns="https://www.w3.org/2000/svg" preserveAspectRatio="none" style={{width: '100%', height: '100%'}}>
                 <defs>
                   <marker id="arrowhead-right" markerWidth="4" markerHeight="4" refX="3.67" refY="2" orient="auto">
                     <polygon points="0 0, 3.67 2, 0 4" fill="white" />
@@ -494,6 +604,9 @@ const StageTechFlanders = () => {
             </div>
           </div>
 
+          {/* Ruler */}
+          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+
           {/* Why It Matters */}
           <div id="why-it-matters" className="text-white p-8 rounded-2xl mt-10 scroll-mt-8" style={{backgroundColor: '#6366f1'}}>
             <h2 className="text-white text-2xl font-bold mb-4">Why It Matters</h2>
@@ -504,13 +617,18 @@ const StageTechFlanders = () => {
             </p>
           </div>
 
-          {/* CTA */}
+          {/* Ruler */}
+          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+
+          {/* Contact */}
           <div className="text-center mt-8">
             <p className="text-white text-xl font-bold mb-4">
               Join us in shaping the future of stage technology.
             </p>
-            <div className="inline-block bg-gradient-to-r from-indigo-500 to-pink-500 text-white px-8 py-3 rounded-full font-semibold text-lg">
-              #StageTechFlanders
+            <div className="text-white space-y-2">
+              <p className="font-semibold">Contact Us</p>
+              <p>Email: info@stagetechflanders.be</p>
+              <p>Website: www.stagetechflanders.be</p>
             </div>
           </div>
         </div>
