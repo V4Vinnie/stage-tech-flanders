@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const StageTechFlanders = () => {
+const App = () => {
   const [hoveredGoal, setHoveredGoal] = useState(null);
 
   const Logo = ({ onCircleHover }) => (
@@ -692,4 +692,4 @@ const StageTechFlanders = () => {
   );
 };
 
-export default StageTechFlanders;
+export default App;
