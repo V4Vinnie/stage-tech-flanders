@@ -4,7 +4,7 @@ const App = () => {
   const [hoveredGoal, setHoveredGoal] = useState(null);
 
   const Logo = ({ onCircleHover }) => (
-    <svg className="logo" viewBox="0 0 400 400" xmlns="https://www.w3.org/2000/svg">
+    <svg className="logo" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style={{stopColor: '#FF8A65', stopOpacity: 1}} />
@@ -110,17 +110,25 @@ const App = () => {
   ];
 
   return (
-    <div className="min-h-screen p-5 md:p-10" style={{backgroundColor: '#3B82F6'}}>
+    <div className="min-h-screen p-5 md:p-10" style={{
+      backgroundColor: '#E8F4F8',
+      backgroundImage: `
+        linear-gradient(rgba(0, 51, 102, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 51, 102, 0.03) 1px, transparent 1px)
+      `,
+      backgroundSize: '50px 50px'
+    }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
         
         body {
           font-family: 'Inter', sans-serif;
-          color: white;
+          color: #003366;
         }
         
         p, h1, h2, h3, h4, h5, h6, span, div, a, li {
-          color: white;
+          color: #003366;
         }
         
         html {
@@ -180,43 +188,43 @@ const App = () => {
         }
         
         .nav-column-vision {
-          background: #6366f1;
+          background: #E8F4F8;
         }
         
         .nav-column-vision:hover {
-          background: #4f46e5;
+          background: #D0E8F0;
         }
         
         .nav-column-goal {
-          background: #6366f1;
+          background: #E8F4F8;
         }
         
         .nav-column-goal:hover {
-          background: #4f46e5;
+          background: #D0E8F0;
         }
         
         .nav-column-pillars {
-          background: #6366f1;
+          background: #E8F4F8;
         }
         
         .nav-column-pillars:hover {
-          background: #4f46e5;
+          background: #D0E8F0;
         }
         
         .nav-column-roadmaps {
-          background: #6366f1;
+          background: #E8F4F8;
         }
         
         .nav-column-roadmaps:hover {
-          background: #4f46e5;
+          background: #D0E8F0;
         }
         
         .nav-column-why {
-          background: #6366f1;
+          background: #E8F4F8;
         }
         
         .nav-column-why:hover {
-          background: #4f46e5;
+          background: #D0E8F0;
         }
         
         .nav-column-vision a,
@@ -346,18 +354,18 @@ const App = () => {
           className="relative px-12 pt-16 pb-0 text-center overflow-hidden header-with-bg max-w-4xl mx-auto"
           style={{
             minHeight: '500px',
-            borderBottom: '4px solid white'
+            borderBottom: '4px solid #003366'
           }}
         >
-          <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-600 opacity-40 z-0"></div>
-          <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-blue-500/30 via-indigo-500/30 to-blue-600/30 z-0"></div>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full -mr-48 -mt-48"></div>
+          <div className="absolute top-0 left-0 right-0 bottom-0 bg-blue-100 opacity-20 z-0"></div>
+          <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-blue-50/30 via-blue-100/30 to-blue-50/30 z-0"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 opacity-10 rounded-full -mr-48 -mt-48"></div>
           <div className="header-content w-full flex flex-col items-center justify-center pb-4">
           <Logo onCircleHover={setHoveredGoal} />
-            <h1 className="header-title text-white text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg" style={{marginTop: '-5px', marginBottom: '0', color: 'white'}}>
+            <h1 className="header-title text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-lg" style={{marginTop: '-5px', marginBottom: '0', color: 'white'}}>
               StageTech Flanders
             </h1>
-            <h2 className="header-subtitle text-white text-sm md:text-base font-semibold drop-shadow-lg" style={{color: 'white', marginTop: '8px'}}>
+            <h2 className="header-subtitle text-sm md:text-base font-semibold drop-shadow-lg" style={{color: 'white', marginTop: '8px'}}>
             Positioning Flanders as a Global Leader in Stage Innovation
             </h2>
           </div>
@@ -365,14 +373,14 @@ const App = () => {
       </div>
       <nav className="header-nav bg-white" style={{zIndex: 20, width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', display: 'flex', flexDirection: 'row'}}>
         <div className="nav-column-vision flex flex-col" style={{width: '20%', flex: '1 1 20%', minWidth: 0}}>
-          <a href="#vision" className="font-semibold transition-all border-r border-white/20 flex items-center justify-center" style={{padding: '16px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <svg className="mx-auto" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24" style={{width: '32px', height: '32px', color: 'white', display: 'block'}}>
+          <a href="#vision" className="font-semibold transition-all border-r flex items-center justify-center" style={{padding: '16px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', borderColor: '#003366'}}>
+            <svg className="mx-auto" fill="none" stroke="#003366" strokeWidth="2" viewBox="0 0 24 24" style={{width: '32px', height: '32px', color: '#003366', display: 'block'}}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
             </svg>
           </a>
-          <a href="#vision" className="font-semibold transition-all border-r border-white/20 flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <span className="text-sm font-medium text-white" style={{color: 'white', textAlign: 'center'}}>Vision</span>
+          <a href="#vision" className="font-semibold transition-all border-r flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', borderColor: '#003366'}}>
+            <span className="text-sm font-medium" style={{color: '#003366', textAlign: 'center'}}>Vision</span>
           </a>
         </div>
         <div className="nav-column-goal flex flex-col" style={{width: '20%', flex: '1 1 20%', minWidth: 0}}>
@@ -381,8 +389,8 @@ const App = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
             </svg>
           </a>
-          <a href="#goal" className="font-semibold transition-all border-r border-white/20 flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <span className="text-sm font-medium text-white" style={{color: 'white', textAlign: 'center'}}>Goal</span>
+          <a href="#goal" className="font-semibold transition-all border-r flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', borderColor: '#003366'}}>
+            <span className="text-sm font-medium" style={{color: '#003366', textAlign: 'center'}}>Goal</span>
           </a>
         </div>
         <div className="nav-column-pillars flex flex-col" style={{width: '20%', flex: '1 1 20%', minWidth: 0}}>
@@ -391,8 +399,8 @@ const App = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </a>
-          <a href="#pillars" className="font-semibold transition-all border-r border-white/20 flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <span className="text-sm font-medium text-white" style={{color: 'white', textAlign: 'center'}}>Pillars</span>
+          <a href="#pillars" className="font-semibold transition-all border-r flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', borderColor: '#003366'}}>
+            <span className="text-sm font-medium" style={{color: '#003366', textAlign: 'center'}}>Pillars</span>
           </a>
         </div>
         <div className="nav-column-roadmaps flex flex-col" style={{width: '20%', flex: '1 1 20%', minWidth: 0}}>
@@ -401,8 +409,8 @@ const App = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
           </a>
-          <a href="#roadmaps" className="font-semibold transition-all border-r border-white/20 flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <span className="text-sm font-medium text-white" style={{color: 'white', textAlign: 'center'}}>Roadmaps</span>
+          <a href="#roadmaps" className="font-semibold transition-all border-r flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', borderColor: '#003366'}}>
+            <span className="text-sm font-medium" style={{color: '#003366', textAlign: 'center'}}>Roadmaps</span>
           </a>
         </div>
         <div className="nav-column-why flex flex-col" style={{width: '20%', flex: '1 1 20%', minWidth: 0}}>
@@ -412,21 +420,21 @@ const App = () => {
             </svg>
           </a>
           <a href="#why-it-matters" className="font-semibold transition-all flex items-center justify-center" style={{padding: '12px 0', textDecoration: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <span className="text-sm font-medium text-white" style={{color: 'white', textAlign: 'center'}}>Why It Matters</span>
+            <span className="text-sm font-medium" style={{color: '#003366', textAlign: 'center'}}>Why It Matters</span>
           </a>
         </div>
       </nav>
       
-      <div className="rounded-3xl overflow-hidden shadow-2xl" style={{backgroundColor: '#6366f1', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)'}}>
+      <div className="rounded-3xl overflow-hidden shadow-2xl" style={{backgroundColor: '#E8F4F8', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', borderTop: '3px solid #003366', borderBottom: '3px solid #003366'}}>
 
         {/* Content */}
-        <div style={{backgroundColor: '#6366f1', width: 'calc(100vw - 7.5rem)', marginLeft: 'calc(-50vw + 50% + 3.75rem)', marginRight: 'calc(-50vw + 50% + 3.75rem)', paddingLeft: '1.25rem', paddingRight: '1.25rem', paddingTop: '2rem', paddingBottom: '2rem'}}>
+        <div style={{backgroundColor: '#E8F4F8', width: 'calc(100vw - 7.5rem)', marginLeft: 'calc(-50vw + 50% + 3.75rem)', marginRight: 'calc(-50vw + 50% + 3.75rem)', paddingLeft: '1.25rem', paddingRight: '1.25rem', paddingTop: '2rem', paddingBottom: '2rem'}}>
           {/* Vision */}
-          <div id="vision" className="p-8 rounded-2xl mb-10 border-l-4 border-white scroll-mt-8" style={{backgroundColor: '#6366f1'}}>
-            <h2 className="text-white text-2xl font-bold mb-4">
+          <div id="vision" className="p-8 rounded-2xl mb-10 border-l-4 border-blue-800 scroll-mt-8" style={{backgroundColor: '#E8F4F8', borderColor: '#003366'}}>
+            <h2 className="text-2xl font-bold mb-4" style={{color: '#003366'}}>
               Our Vision
             </h2>
-            <p className="text-white leading-relaxed">
+            <p className="leading-relaxed" style={{color: '#003366'}}>
               StageTech Flanders is a collaboration between the Flemish Government, imec, Ent.a and Howest, Thomas More, Ritcs, Luca School of Arts, PXL, AP Hogeschool.
               We aim to create a thriving ecosystem where technology and stage performances converge. We focus on technology that drives multi-person experiences, ranging from music festivals
               to immersive experiences.
@@ -458,11 +466,11 @@ const App = () => {
           </div>
 
           {/* Ruler */}
-          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+          <hr style={{border: 'none', borderTop: '2px solid #003366', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Goal */}
           <div id="goal" className="scroll-mt-8 mb-10" style={{position: 'relative'}}>
-            <h2 className="text-white text-2xl font-bold mb-6 pb-3 border-b-4 border-white inline-block">
+            <h2 className="text-2xl font-bold mb-6 pb-3 inline-block" style={{color: '#003366', borderBottom: '4px solid #003366'}}>
               Goal
             </h2>
             
@@ -478,12 +486,12 @@ const App = () => {
               <tr style={{display: 'table-row'}}>
                 <td colSpan="4" style={{display: 'table-cell', textAlign: 'center', padding: '0', verticalAlign: 'top'}}>
                   <div style={{margin: '0 auto', maxWidth: '60%'}}>
-                    <h3 className="text-white text-xl font-bold mb-3 text-center">PROGRAM</h3>
+                    <h3 className="text-xl font-bold mb-3 text-center" style={{color: '#003366'}}>PROGRAM</h3>
                     <div 
                       className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 0 ? 'highlighted' : ''}`}
-                      style={{backgroundColor: '#6366f1'}}
+                      style={{backgroundColor: '#E8F4F8', borderColor: '#003366'}}
                     >
-                      <p className="text-white font-medium text-sm">
+                      <p className="font-medium text-sm" style={{color: '#003366'}}>
                         {goals[0]}
                       </p>
                     </div>
@@ -503,23 +511,23 @@ const App = () => {
               {/* Row 3: Two columns - paragraph 2 and 3 */}
               <tr style={{display: 'table-row'}}>
                 <td colSpan="2" style={{display: 'table-cell', padding: '0 0.75rem 0 0', verticalAlign: 'top'}}>
-                  <h3 className="text-white text-xl font-bold mb-3 text-center">NETWORK</h3>
+                    <h3 className="text-xl font-bold mb-3 text-center" style={{color: '#003366'}}>NETWORK</h3>
                   <div 
-                    className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 1 ? 'highlighted' : ''}`}
-                    style={{backgroundColor: '#6366f1'}}
+                    className={`goal-item p-5 rounded-xl border-l-4 shadow-sm ${hoveredGoal === 1 ? 'highlighted' : ''}`}
+                    style={{backgroundColor: '#E8F4F8', borderColor: '#003366'}}
                   >
-                    <p className="text-white font-medium text-sm">
+                    <p className="font-medium text-sm" style={{color: '#003366'}}>
                       {goals[1]}
                     </p>
                   </div>
                 </td>
                 <td colSpan="2" style={{display: 'table-cell', padding: '0 0 0 0.75rem', verticalAlign: 'top'}}>
-                  <h3 className="text-white text-xl font-bold mb-3 text-center">HUB</h3>
+                    <h3 className="text-xl font-bold mb-3 text-center" style={{color: '#003366'}}>HUB</h3>
                   <div 
-                    className={`goal-item p-5 rounded-xl border-l-4 border-white shadow-sm ${hoveredGoal === 2 ? 'highlighted' : ''}`}
-                    style={{backgroundColor: '#6366f1'}}
+                    className={`goal-item p-5 rounded-xl border-l-4 shadow-sm ${hoveredGoal === 2 ? 'highlighted' : ''}`}
+                    style={{backgroundColor: '#E8F4F8', borderColor: '#003366'}}
                   >
-                    <p className="text-white font-medium text-sm">
+                    <p className="font-medium text-sm" style={{color: '#003366'}}>
                       {goals[2]}
                     </p>
                   </div>
@@ -529,41 +537,41 @@ const App = () => {
           </div>
 
           {/* Ruler */}
-          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+          <hr style={{border: 'none', borderTop: '2px solid #003366', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Strategic Pillars */}
-          <h2 id="pillars" className="text-white text-2xl font-bold mb-6 pb-3 border-b-4 border-white inline-block scroll-mt-8">
+          <h2 id="pillars" className="text-2xl font-bold mb-6 pb-3 inline-block scroll-mt-8" style={{color: '#003366', borderBottom: '4px solid #003366'}}>
             Strategic Pillars
           </h2>
           
           <div style={{display: 'flex', flexDirection: 'row', gap: '1.5rem', marginTop: '2rem', marginBottom: '2.5rem'}}>
             {pillars.map((pillar, index) => (
-              <div key={index} className="pillar-card p-8 rounded-2xl border-2 border-white" style={{backgroundColor: '#6366f1', flex: '1 1 0%', minWidth: 0}}>
-                <h3 className="text-white text-lg font-bold mb-3">{pillar.title}</h3>
-                <p className="text-white text-sm leading-relaxed">{pillar.description}</p>
+              <div key={index} className="pillar-card p-8 rounded-2xl border-2" style={{backgroundColor: '#E8F4F8', borderColor: '#003366', flex: '1 1 0%', minWidth: 0}}>
+                <h3 className="text-lg font-bold mb-3" style={{color: '#003366'}}>{pillar.title}</h3>
+                <p className="text-sm leading-relaxed" style={{color: '#003366'}}>{pillar.description}</p>
               </div>
             ))}
           </div>
 
           {/* Ruler */}
-          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+          <hr style={{border: 'none', borderTop: '2px solid #003366', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Research Roadmaps */}
-          <h2 id="roadmaps" className="text-white text-2xl font-bold mb-6 pb-3 border-b-4 border-white inline-block scroll-mt-8">
+          <h2 id="roadmaps" className="text-2xl font-bold mb-6 pb-3 inline-block scroll-mt-8" style={{color: '#003366', borderBottom: '4px solid #003366'}}>
             Research Roadmaps
           </h2>
           
           <div className="roadmaps-container" style={{position: 'relative', marginTop: '2rem', marginBottom: '4rem', minHeight: '450px'}}>
             <div className="roadmap-arrow" style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
-              <svg viewBox="0 0 1000 450" xmlns="https://www.w3.org/2000/svg" preserveAspectRatio="none" style={{width: '100%', height: '100%'}}>
+              <svg viewBox="0 0 1000 450" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{width: '100%', height: '100%'}}>
                 <defs>
-                  <marker id="arrowhead-right" markerWidth="4" markerHeight="4" refX="3.67" refY="2" orient="auto">
-                    <polygon points="0 0, 3.67 2, 0 4" fill="white" />
+                  <marker id="arrowhead-right" markerWidth="8" markerHeight="4" refX="5" refY="2" orient="auto">
+                    <polygon points="0 0, 8 2, 0 4" fill="#003366" />
                   </marker>
                 </defs>
                 <path 
-                  d="M 80 380 Q 250 250, 500 120 Q 750 60, 920 60" 
-                  stroke="white" 
+                  d="M 80 380 Q 150 350, 250 320 Q 400 250, 500 180 Q 650 100, 750 70 Q 850 50, 910 60 L 920 60" 
+                  stroke="#003366" 
                   strokeWidth="10" 
                   fill="none" 
                   markerEnd="url(#arrowhead-right)"
@@ -573,21 +581,23 @@ const App = () => {
             </div>
             <div style={{position: 'relative', zIndex: 2, height: '100%'}}>
               {roadmaps.map((roadmap, index) => {
-                // Positions aligned with the arrow path: M 80 380 Q 250 250, 500 120 Q 750 60, 920 60
+                // Positions aligned with the new curved arrow path: M 80 380 Q 150 350, 250 320 Q 400 250, 500 180 Q 650 100, 750 70 Q 850 50, 920 60
                 // Converting SVG coordinates (0-1000, 0-450) to percentages
-                // Moving down: first 4 lines, second 10 lines, third 8 lines
-                // First item left-aligned with title (0% left)
+                // First item: ~80px (8% of 1000) at ~380px (84% of 450)
+                // Second item: ~500px (50% of 1000) at ~180px (40% of 450)
+                // Third item: ~920px (92% of 1000) at ~60px (13% of 450)
                 const positions = [
-                  { left: '0%', top: 'calc(84% + 4 * 1.5rem)' },      // 4 lines down, left-aligned with title
-                  { left: '50%', top: 'calc(27% + 12 * 1.5rem)' },    // 12 lines down (10 + 2)
-                  { right: '0%', top: 'calc(13% + 8 * 1.5rem)' }     // 8 lines down, right-aligned with body text margin
+                  { left: '8%', top: 'calc(84% + 4 * 1.5rem)' },      // First item: near start of curve
+                  { left: '50%', top: 'calc(40% + 16 * 1.5rem)' },    // Second item: moved 2 lines up
+                  { right: '3%', top: 'calc(13% + 10 * 1.5rem)' }     // Third item: moved 6 lines up and 5% to the right
                 ];
                 return (
                   <div 
                     key={index} 
-                    className="roadmap-item p-6 rounded-xl border-l-4 border-white" 
+                    className="roadmap-item p-6 rounded-xl border-l-4" 
                     style={{
-                      backgroundColor: '#6366f1', 
+                      backgroundColor: '#E8F4F8',
+                      borderColor: '#003366', 
                       width: '28%',
                       position: 'absolute',
                       ...(positions[index].left !== undefined ? { left: positions[index].left } : {}),
@@ -596,8 +606,8 @@ const App = () => {
                       transform: index === 0 ? 'translateY(-50%)' : index === 2 ? 'translateX(0) translateY(-50%)' : 'translate(-50%, -50%)'
                     }}
                   >
-                    <h4 className="text-white text-base font-bold mb-2">{roadmap.title}</h4>
-                    <p className="text-white text-sm leading-relaxed">{roadmap.description}</p>
+                    <h4 className="text-base font-bold mb-2" style={{color: '#003366'}}>{roadmap.title}</h4>
+                    <p className="text-sm leading-relaxed" style={{color: '#003366'}}>{roadmap.description}</p>
                   </div>
                 );
               })}
@@ -605,12 +615,12 @@ const App = () => {
           </div>
 
           {/* Ruler */}
-          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+          <hr style={{border: 'none', borderTop: '2px solid #003366', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Why It Matters */}
-          <div id="why-it-matters" className="text-white p-8 rounded-2xl mt-10 scroll-mt-8" style={{backgroundColor: '#6366f1'}}>
-            <h2 className="text-white text-2xl font-bold mb-4">Why It Matters</h2>
-            <p className="text-white leading-relaxed">
+          <div id="why-it-matters" className="p-8 rounded-2xl mt-10 scroll-mt-8" style={{backgroundColor: '#E8F4F8', borderLeft: '4px solid #003366'}}>
+            <h2 className="text-2xl font-bold mb-4" style={{color: '#003366'}}>Why It Matters</h2>
+            <p className="leading-relaxed" style={{color: '#003366'}}>
               The entertainment industry is evolving toward immersive, experience-driven formats. 
               Stage Tech Flanders ensures that Flanders leads this transformation, combining 
               technological excellence with creative vision.
@@ -618,14 +628,14 @@ const App = () => {
           </div>
 
           {/* Ruler */}
-          <hr style={{border: 'none', borderTop: '2px solid white', margin: '2rem 0', opacity: 0.3}} />
+          <hr style={{border: 'none', borderTop: '2px solid #003366', margin: '2rem 0', opacity: 0.3}} />
 
           {/* Contact */}
           <div className="text-center mt-8">
-            <p className="text-white text-xl font-bold mb-4">
+            <p className="text-xl font-bold mb-4" style={{color: '#003366'}}>
               Join us in shaping the future of stage technology.
             </p>
-            <div className="text-white space-y-2">
+            <div className="space-y-2" style={{color: '#003366'}}>
               <p className="font-semibold">Contact Us</p>
               <p>Email: info@stagetechflanders.be</p>
               <p>Website: www.stagetechflanders.be</p>
@@ -635,55 +645,55 @@ const App = () => {
       </div>
       
       {/* Footer with Partner Logos */}
-      <footer style={{backgroundColor: '#6366f1', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', padding: '3rem 1.25rem', borderTop: '2px solid rgba(255, 255, 255, 0.2)'}}>
+      <footer style={{backgroundColor: '#E8F4F8', width: '100vw', marginLeft: 'calc(-50vw + 50%)', marginRight: 'calc(-50vw + 50%)', padding: '3rem 1.25rem', borderTop: '3px solid #003366'}}>
         <div style={{maxWidth: '1200px', margin: '0 auto'}}>
-          <h3 className="text-white text-lg font-semibold mb-6 text-center">Our Partners</h3>
+          <h2 className="text-2xl font-bold mb-6 pb-3 inline-block" style={{color: '#003366', borderBottom: '4px solid #003366'}}>Our Partners</h2>
           <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '2rem 3rem'}}>
             {/* Partner logos - Replace src with actual logo image paths */}
             {/* Flemish Government */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
               <img src={process.env.PUBLIC_URL + "/logos/flemish-government.png"} alt="Flemish Government" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Flemish Government</span>
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Flemish Government</span>
             </div>
             {/* imec */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/imec.png"} alt="imec" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>imec</span>
+              <img src={process.env.PUBLIC_URL + "/logos/imec.png"} alt="imec" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>imec</span>
             </div>
             {/* Ent.a */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/enta.png"} alt="Ent.a" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Ent.a</span>
+              <img src={process.env.PUBLIC_URL + "/logos/enta.png"} alt="Ent.a" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Ent.a</span>
             </div>
             {/* Howest */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/howest.png"} alt="Howest" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Howest</span>
+              <img src={process.env.PUBLIC_URL + "/logos/howest.png"} alt="Howest" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Howest</span>
             </div>
             {/* Thomas More */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/Thomas_More.png"} alt="Thomas More" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Thomas More</span>
+              <img src={process.env.PUBLIC_URL + "/logos/Thomas_More.png"} alt="Thomas More" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Thomas More</span>
             </div>
             {/* Ritcs */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/RITCS.png"} alt="Ritcs" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Ritcs</span>
+              <img src={process.env.PUBLIC_URL + "/logos/RITCS.png"} alt="Ritcs" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Ritcs</span>
             </div>
             {/* Luca School of Arts */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
               <img src={process.env.PUBLIC_URL + "/logos/luca.png"} alt="Luca School of Arts" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>Luca School of Arts</span>
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>Luca School of Arts</span>
             </div>
             {/* PXL */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
               <img src={process.env.PUBLIC_URL + "/logos/pxl.png"} alt="PXL" style={{height: '50px', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>PXL</span>
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>PXL</span>
             </div>
             {/* AP Hogeschool */}
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: '60px', opacity: 0.9}}>
-              <img src={process.env.PUBLIC_URL + "/logos/AP.png"} alt="AP Hogeschool" style={{height: '50px', filter: 'grayscale(100%) brightness(0) invert(1)', objectFit: 'contain'}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
-              <span className="text-white font-semibold text-sm" style={{display: 'none'}}>AP Hogeschool</span>
+              <img src={process.env.PUBLIC_URL + "/logos/AP.png"} alt="AP Hogeschool" style={{height: '50px', filter: 'grayscale(100%) brightness(0) saturate(0%)', objectFit: 'contain', opacity: 0.7}} onError={(e) => {e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block';}} />
+              <span className="font-semibold text-sm" style={{display: 'none', color: '#003366'}}>AP Hogeschool</span>
             </div>
           </div>
         </div>

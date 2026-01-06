@@ -3,6 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://V4Vinnie.github.io/stage-tech-flanders",
+  "description": "StageTech Flanders website - Static React app that builds to pure HTML/CSS/JS",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "build:azure": "react-scripts build && echo 'Build complete! Files in build/ folder are ready for Azure deployment.'",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "deploy:azure": "npm run build && ./deploy-azure.sh"
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -12,14 +23,6 @@
     "react-dom": "^19.2.3",
     "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
